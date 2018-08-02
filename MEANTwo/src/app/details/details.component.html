@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="Header">
+      <h1>Product Details</h1>
+      <br>
+      <h4>To delete a product, the Quantity must be 0</h4>
+  </div>
+  <div class="details">
+    <label>Product Name:</label><span class="col"> {{prod.name}}</span><br>
+    <label>Quantity In Stock:</label><span class="col"> {{prod.quantity}} </span><br>
+    <label>Product Price:</label><span class="col"> {{prod.price}}</span><br>
+  </div>
+  <div class="nav">
+    <button [routerLink]="['/list']">BACK</button>
+    <button *ngIf="prod.quantity == 0" (click)="delete()" >DELETE</button>
+  </div>
+</div>
+

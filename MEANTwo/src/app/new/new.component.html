@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>New Product</h1>
+  <ul *ngIf="messages">
+    <li *ngFor="let message of messages">
+      {{message}}
+    </li>
+  </ul>
+  <form (submit)="create($event)" >
+    <div class="form-group">
+      <label class="control-label col-sm-1" for="prod.name">Name: </label> <input  type="text" name="prod.name" [(ngModel)]="prod.name"><br>
+      <label class="control-label col-sm-1" for="prod.quantity">Quantity:</label> <input type="number" name="prod.quantity" [(ngModel)]="prod.quantity"><br>
+      <label class="control-label col-sm-1" for="prod.price">Price: </label><input type="number" name="prod.price" [(ngModel)]="prod.price"/><br>
+    </div>
+    <input type="submit" value="CREATE">
+    <button [routerLink]="['/list']">CANCEL</button>
+  </form>
+</div>
